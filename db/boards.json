@@ -1,0 +1,30 @@
+ {
+  "board1": {
+  "id": "1",
+  "name": "Music",
+  "description":"artwork of my favorite music",
+  "uid":"RdbuhSexStOSAcFDRmqfQ9KvO6h2",
+  "boardImg":"https://data.whicdn.com/images/314167408/original.jpg"
+},
+"board2": {
+  "id": "2",
+  "name": "Fashion",
+  "description":"Must have clothing pieces",
+  "uid":"RdbuhSexStOSAcFDRmqfQ9KvO6h2",
+  "boardImg":"https://static1.fashionbeans.com/wp-content/uploads/2018/10/street-winter-18-top-1.jpg"
+},
+"board3": {
+  "id": "3",
+  "name": "Film",
+  "description":"artwork of my favorite films",
+  "uid":"RdbuhSexStOSAcFDRmqfQ9KvO6h2",
+  "boardImg":"https://cdn11.bigcommerce.com/s-rmoyg9wwxo/images/stencil/1280x1280/products/1118/3401/pulp-fiction-afi-movie-poster-lithograph__86814.1517627969.jpg?c=2&imbypass=on"
+},
+"board4": {
+  "id": "4",
+  "name": "TV series",
+  "description":"favorite tv series",
+  "uid":"RdbuhSexStOSAcFDRmqfQ9KvO6h2",
+  "boardImg":"https://i.pinimg.com/originals/20/2f/c3/202fc37283f5300283d0627c4413aa3a.jpg"
+}
+}
