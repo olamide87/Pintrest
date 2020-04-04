@@ -24,5 +24,100 @@
   <div id='auth' class='d-flex'></div>
   <div id='boards'></div>
   <div id="pins"></div>
+
+  <!-- ADD BOARD MODAL -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add New Board</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="snack-name">Name</label>
+              <input type="text" class="form-control" id="boardName" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+              <label for="snack-image-url">Image Url</label>
+              <input type="text" class="form-control" id="boardImageUrl" placeholder="Enter image Url">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="addNewBoardBtn">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Add New Pin Modal -->
+  <div class="modal fade" id="pinModal" tabindex="-1" role="dialog" aria-labelledby="pinModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pinModalLabel">Add New Pin</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="pinTitle">Pin Title</label>
+              <input type="text" class="form-control" id="pinTitle" placeholder="Enter Title">
+            </div>
+            <div class="form-group">
+              <label for="pinImgUrl">Image URL</label>
+              <input type="text" class="form-control" id="pinImgUrl" placeholder="Enter Image Url">
+            <div class="form-group">
+              <label for="pinDescription">Pin Description</label>
+              <input type="text" class="form-control" id="pinDescription" placeholder="Enter Description">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="addNewPin">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        <!-- Update Pin Modal -->
+        <div class="modal fade" id="updatePinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Choose A Board To Update Pin</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            <form>
+            <div class="form-group" id="updatePinBoard">
+            </div>
+          </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary saveUpdatePinButton">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
 </body>
 </html>

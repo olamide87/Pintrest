@@ -1,7 +1,7 @@
 import axios from 'axios';
 import apikeys from '../apikeys.json';
 
-const baseUrl = apiKeys.firebaseConfig.databaseURL;
+const baseUrl = apikeys.firebaseConfig.databaseURL;
 
 
 const getPinsByBoardId = (boardId) => new Promise((resolved, reject) => {
@@ -20,9 +20,9 @@ const getPinsByBoardId = (boardId) => new Promise((resolved, reject) => {
 
 const addPin = (newPin) => axios.post(`${baseUrl}/pins.json`, newPin);
 
-const deletePin = (pinsId) => axios.delete(`${baseUrl}/pins/${pinsId}.json`, newPinBoard);
+const deletePin = (pinsId) => axios.delete(`${baseUrl}/pins/${pinsId}.json`);
 
-const updateNewPin = (pinsId, newBoard) => axios.put(`${baseUl}/pins/${pinsId}.json`, newPinBoard);
+const updateNewPin = (pinsId, newPinBoard) => axios.put(`${baseUrl}/pins/${pinsId}.json`, newPinBoard);
 
 const getPin = (pinsId, newBoardId) => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/pins/${pinsId}.json`)

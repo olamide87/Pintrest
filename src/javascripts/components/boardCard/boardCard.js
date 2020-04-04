@@ -1,5 +1,22 @@
 import './boardCard.scss';
 
+const boardRadioOptions = (board) => {
+  //  pass board through
+  //  create domString to build radio button options
+  let domString2 = '';
+  if (board.id) {
+    domString2 += `
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="boardRadios" value=${board.id}>
+        <label class="form-check-label" for="exampleRadios2">
+          ${board.name}
+        </label>
+      </div>
+      `;
+  }
+  return domString2;
+};
+
 const makeABoard = (board) => {
   let domString = '';
   if (board.id) {

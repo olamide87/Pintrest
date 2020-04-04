@@ -1,4 +1,3 @@
-
 import './boards.scss';
 import $ from 'jquery';
 import firebase from 'firebase/app';
@@ -10,9 +9,33 @@ import pinsData from '../../helpers/data/pinData';
 import pinsPrint from '../pinCard/pinCard';
 
 
+const updatePin = (e) => {
+  e.stopImmediatePropagation();
+  const { uid } = firebase.auth().currentUser;
+  const pinId = e.target.id.split('updatePin-')[1];
+  const boardId = $('input[name=boardRadios]:checked').val();
+  pinsData.getPin(pinId, boardId)
+    .then(() => {
+      $('#updatePinModal').modal('hide');
+    });
+  // eslint-disable-next-line no-use-before-define
+  buildBoards(uid);
+};
+
 const updatePinHandler = (e) => {
   const pinId = e.target.id.split('pin-')[1];
-  $('saveUpdatePinButton').attr('id', `updatePin-${pinId}`);
+  $('.saveUpdatePinButton').attr('id', `updatePin-${pinId}`);
+};
+
+const close = () => {
+  const { uid } = firebase.auth().currentUser;
+  $(document).click((e) => {
+    const buttonName = e.target.className;
+    if (buttonName === 'closeBtn') {
+      // eslint-disable-next-line no-use-before-define
+      buildBoards(uid);
+    }
+  });
 };
 
 
@@ -31,6 +54,7 @@ const deleteABoard = (e) => {
     .catch((error) => console.error(error));
 };
 
+
 const addNewBoard = (e) => {
   e.stopImmediatePropagation();
   const { uid } = firebase.auth().currentUser;
@@ -44,6 +68,25 @@ const addNewBoard = (e) => {
       $('#exampleModal').modal('hide');
       // eslint-disable-next-line no-use-before-define
       buildBoards(uid);
+    })
+    .catch((error) => console.error(error));
+};
+
+
+const addNewPin = (e) => {
+  e.stopImmediatePropagation();
+  const boardId = e.target.getAttribute('pinBoardId');
+  const newPin = {
+    title: $('#pinTitle').val(),
+    imgUrl: $('#pinImgUrl').val(),
+    description: $('#pinDescription').val(),
+    boardId,
+  };
+  pinsData.addPin(newPin)
+    .then(() => {
+      $('#pinModal').modal('hide');
+      // eslint-disable-next-line no-use-before-define
+      showSingleBoard(boardId);
     })
     .catch((error) => console.error(error));
 };
@@ -95,6 +138,9 @@ const buildBoards = (uid) => {
         domString += boardCard.makeABoard(board);
       });
       let domString2 = '<div>';
+      boards.forEach((board) => {
+        domString2 += boardCard.boardRadioOptions(board);
+      });
       domString += '</div>';
       domString2 += '</div>';
       utils.printToDom('boards', domString);
@@ -105,16 +151,7 @@ const buildBoards = (uid) => {
       $('#addNewBoardBtn').click(addNewBoard);
       $('#addNewPin').click(addNewPin);
     });
-};
-
-const close = () => {
-  const { uid } = firebase.auth().currentUser;
-  $(document).click((e) => {
-    const buttonName = e.target.className;
-    if (buttonName === 'closeBtn') {
-      buildBoards(uid)
-    }
-  });
+  // .catch((error) => console.error(error));
 };
 
 export default { buildBoards };
