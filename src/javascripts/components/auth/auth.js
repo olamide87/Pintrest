@@ -7,7 +7,6 @@ import './auth.scss';
 const signMeIn = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider);
-  $('#google-auth').toggleClass('hide');
 };
 
 const loginButton = () => {
@@ -16,4 +15,6 @@ const loginButton = () => {
   $('#google-auth').click(signMeIn);
 };
 
-export default { loginButton };
+export default {
+  loginButton,
+};

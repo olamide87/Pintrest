@@ -124,6 +124,7 @@ const deleteAPin = (e) => {
 
 const createSingleBoard = (e) => {
   const boardId = e.target.id;
+  console.error('xscdfvbnhjmk');
   showSingleBoard(boardId);
 };
 
@@ -154,4 +155,6 @@ const buildBoards = (uid) => {
   // .catch((error) => console.error(error));
 };
 
-export default { buildBoards };
+export default {
+  buildBoards,
+};
